@@ -5,7 +5,7 @@ while(i<=10):  #condition
 
 
 i=100 #intialization
-while(i>=10):  #condition
+while(i>=1):  #condition
  print(i)
  i=i-1
 
