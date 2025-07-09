@@ -1,0 +1,12 @@
+d={1:"Hello",2:"Why",3:"Hello1"}
+print(type(d))
+print(d.get(1))
+print(d.keys())
+print(d.values())
+print(d.items())
+d.update({4:"dhvani",5 :"Kareena"})
+print(d)
+d.pop(2)
+print(d)
+d.popitem()
+print(d)
