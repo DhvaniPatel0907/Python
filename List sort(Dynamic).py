@@ -4,7 +4,6 @@ for i in range(1, n + 1):
     n1 = int(input("Enter a Number: "))
     l.append(n1)
 
-
 print(l)
 
 l1 = len(l)
