@@ -1,25 +1,28 @@
 import random
 
-print("Welcome to Stone Paper Scissors Game!")
-print("Choose one: stone, paper, or scissors")
+options = ["Rock", "Paper", "Scissor"]
 
-# Get user choice
-user = input("Your choice: ").lower()
+user_choice = input("Enter your Move = Rock, Paper, Scissor: ")
+comp_choice = random.choice(options)
 
-# Get computer choice
-options = ["stone", "paper", "scissors"]
-computer = random.choice(options)
+print(f"User choice = {user_choice}, Computer choice = {comp_choice}")
 
-print("Computer chose:", computer)
-
-# Decide winner
-if user == computer:
-    print("It's a draw!")
-elif (user == "stone" and computer == "scissors") or \
-     (user == "paper" and computer == "stone") or \
-     (user == "scissors" and computer == "paper"):
-    print("You win!")
-elif user in options:
-    print("Computer wins!")
+if user_choice == comp_choice:
+    print("Match Tie")
+elif user_choice == "Rock":
+    if comp_choice == "Paper":
+        print("Computer Wins :)")
+    else:
+        print("You Win :)")
+elif user_choice == "Paper":
+    if comp_choice == "Scissor":
+        print("Computer Wins :)")
+    else:
+        print("You Win :)")
+elif user_choice == "Scissor":
+    if comp_choice == "Rock":
+        print("Computer Wins :)")
+    else:
+        print("You Win :)")
 else:
-    print("Invalid input. Please choose stone, paper, or scissors.")
+    print("Invalid input! Please choose Rock, Paper, or Scissor.")
