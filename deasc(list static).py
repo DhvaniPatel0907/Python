@@ -8,4 +8,4 @@ for i in range(0,l1):
             l[i]=l[j]
             l[j]=temp
 for i in range(0,l1):
-    print("ASC order:",l[i])
+    print("DEASC order:",l[i])
