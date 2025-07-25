@@ -1,0 +1,6 @@
+file = open("test5.txt","w+")
+file.write("This is W+ Method")
+print(file.tell())
+file.seek(0)
+print(file.read())
+file.close()

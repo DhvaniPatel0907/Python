@@ -1,0 +1,6 @@
+file = open("test5.txt","a+")
+file.write("\nThis is a+ method")
+print(file.tell())
+file.seek(0)
+print(file.read())
+file.close()
