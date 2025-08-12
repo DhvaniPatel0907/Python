@@ -1,7 +1,4 @@
-
-#dynamic programming
-
-n = int(input("enter a number:")) #type casting 
+n = int(input("enter a number:")) 
 n1 = int(input("enter a number:"))
 print(type(n))
 
