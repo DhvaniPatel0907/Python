@@ -1,12 +1,12 @@
-import pymysql 
+from pymysql import *
 
-mydb = pymysql.connect(host="localhost",user="root",password="")
+mydb = connect(host="localhost",user="root",password="")
 mycursor = mydb.cursor()
 
 mycursor.execute("create database if not exists signup")
 mydb.commit()
 
-mydb = pymysql.connect(host="localhost",user="root",password="",database="signup")
+mydb = connect(host="localhost",user="root",password="",database="signup")
 mycursor = mydb.cursor()
 
 mycursor.execute("create table if not exists data(id int primary key auto_increment,name varchar(100),subject varchar(40))")
