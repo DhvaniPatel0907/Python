@@ -11,9 +11,9 @@ class InventoryDB:
         )
         self.cursor = self.conn.cursor()
 
-    # -------------------- MANAGER FUNCTIONS --------------------
+    #  MANAGER FUNCTIONS 
     def add_product(self):
-        print("\n--- Add Product ---")
+        print("\nAdd Product ")
         name = input("Enter product name: ").lower()
         try:
             price = float(input("Enter product price: "))
@@ -31,18 +31,18 @@ class InventoryDB:
             print(" Product already exists! Use update option.")
 
     def view_products(self):
-        print("\n--- Current Inventory ---")
+        print("\n Current Inventory ")
         self.cursor.execute("SELECT * FROM products")
         rows = self.cursor.fetchall()
         if not rows:
-            print("⚠ No products available!")
+            print(" No products available!")
         else:
             for row in rows:
                 print(f"{row[1]} -> Price: {row[2]}, Quantity: {row[3]}")
         print("-------------------------\n")
 
     def update_product(self):
-        print("\n--- Update Product ---")
+        print("\n Update Product ")
         name = input("Enter product name to update: ").lower()
         self.cursor.execute("SELECT * FROM products WHERE name=%s", (name,))
         if not self.cursor.fetchone():
@@ -62,7 +62,7 @@ class InventoryDB:
         print(f"{name} updated successfully!")
 
     def delete_product(self):
-        print("\n--- Delete Product ---")
+        print("\n Delete Product ")
         name = input("Enter product name to delete: ").lower()
         sql = "DELETE FROM products WHERE name=%s"
         self.cursor.execute(sql, (name,))
@@ -70,11 +70,11 @@ class InventoryDB:
         if self.cursor.rowcount > 0:
             print(f" {name} deleted successfully!")
         else:
-            print("⚠ Product not found!")
+            print(" Product not found!")
 
-    # -------------------- CUSTOMER FUNCTIONS --------------------
+    #  CUSTOMER 
     def purchase_product(self):
-        print("\n--- Purchase Product ---")
+        print("\n Purchase Product ")
         name = input("Enter product name: ").lower()
 
         # Fetch product
@@ -119,11 +119,11 @@ class InventoryDB:
             print("Stock updated successfully!")
 
 
-# -------------------- MAIN PROGRAM --------------------
+#  MAIN PROGRAM 
 obj = InventoryDB()
 
 while True:
-    print("===== Inventory Management System =====")
+    print(" Inventory Management System ")
     print("1. Manager")
     print("2. Customer")
     print("3. Exit")
@@ -136,7 +136,7 @@ while True:
 
     if choice == 1:  # Manager Menu
         while True:
-            print("\n--- Manager Menu ---")
+            print("\n Manager Menu")
             print("1. Add Product")
             print("2. View Products")
             print("3. Update Product")
@@ -146,7 +146,7 @@ while True:
             try:
                 m_choice = int(input("Enter your choice: "))
             except ValueError:
-                print("⚠ Please enter a valid number!")
+                print(" Please enter a valid number!")
                 continue
 
             if m_choice == 1:
@@ -164,7 +164,7 @@ while True:
 
     elif choice == 2:  # Customer Menu
         while True:
-            print("\n--- Customer Menu ---")
+            print("\n Customer Menu ")
             print("1. Purchase Product")
             print("2. View Products")
             print("3. Back to Main Menu")
@@ -172,7 +172,7 @@ while True:
             try:
                 c_choice = int(input("Enter your choice: "))
             except ValueError:
-                print("⚠ Please enter a valid number!")
+                print(" Please enter a valid number!")
                 continue
 
             if c_choice == 1:
